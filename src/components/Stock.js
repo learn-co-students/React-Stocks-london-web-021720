@@ -1,21 +1,27 @@
 import React from 'react'
 
-const Stock = () => (
+const Stock = ({stock, name, price, ticker, type, id, purchaseStock, sellStock}) => {
+ 
+  
+  return(
   <div>
 
     <div className="card">
-      <div className="card-body">
+      <div onClick={() => purchaseStock ? purchaseStock(id) : sellStock(id) }  className="card-body">
         <h5 className="card-title">{
-            //Company Name
+            name
           }</h5>
         <p className="card-text">{
-            //ticker: stock price
+           ticker + ": " + price
+            
           }</p>
+          
       </div>
+          
     </div>
 
 
-  </div>
-);
+  </div>)
+};
 
 export default Stock
